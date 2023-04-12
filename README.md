@@ -2,7 +2,7 @@
 
 AI Theremin is a funny application which uses hand tracking to simulate a musical instrument called the theremin.
 
-![](https://cdn.discordapp.com/attachments/932672918859702355/1095758577509077022/AI-Theremin.gif)
+![](https://cdn.discordapp.com/attachments/932672918859702355/1095760205297504367/AITheremin.gif)
 
 ## Features
 Left hand detection for volume control
@@ -15,7 +15,7 @@ Real-time sound generation based on hand position
 1. Clone this repository:
 
 ```bash
-https://github.com/AnodeGrindYo/DiffusionModels
+https://github.com/AnodeGrindYo/AI-Theremin
 ```
 
 2. Install the dependencies:
