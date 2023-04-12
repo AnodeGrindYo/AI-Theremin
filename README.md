@@ -5,10 +5,10 @@ AI Theremin is a funny application which uses hand tracking to simulate a musica
 ![](AITheremin.gif)
 
 ## Features
-Left hand detection for volume control
-Right hand detection for frequency control
-Real-time display of hand coordinates, frequency, and volume
-Real-time sound generation based on hand position
+- Left hand detection for volume control
+- Right hand detection for frequency control
+- Real-time display of hand coordinates, frequency, and volume
+- Real-time sound generation based on hand position
 
 ## Installation
 
