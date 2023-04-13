@@ -50,4 +50,4 @@ Feel free to provide suggestions and contribute to this project. Together, we ca
   - add other oscillator shapes with a selector
 
 And maybe later :
-- recode it in C++ with JUCE to make a VST
+- rewrite it in C++ with JUCE to make a VST
