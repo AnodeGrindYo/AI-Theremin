@@ -2,7 +2,6 @@
 
 AI Theremin is a funny application which uses hand tracking to simulate a musical instrument called the theremin.
 
-![](AITheremin.gif)
 
 ## Features
 - Left hand detection for volume control
