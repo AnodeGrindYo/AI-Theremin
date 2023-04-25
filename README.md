@@ -1,5 +1,7 @@
 # AI-Theremin
 
+![](https://media.discordapp.net/attachments/922801785637322773/1100570818062331964/theremin2.gif)
+
 AI Theremin is a funny application which uses hand tracking to simulate a musical instrument called the theremin.
 
 
@@ -42,7 +44,7 @@ This project is licensed under the MIT License. For more information, please see
 Feel free to provide suggestions and contribute to this project. Together, we can create an even better virtual theremin experience!
 
 ## Todo 
-- Improve sound quality
+- Improve sound quality // DONE !
 - Improve user interface
   - add a tuner to know which note is played
   - add a scale choser which adds lines on the video were are the notes of the scale
