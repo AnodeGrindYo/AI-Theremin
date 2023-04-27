@@ -1,12 +1,25 @@
 import numpy as np
 
 class DataSmoother:
-    def __init__(self, smoothing_factor=0.2, change_limit=5):
+    
+    def __init__(self, smoothing_factor: float = 0.2, change_limit: float = 5) -> None:
+        """
+        Initialize a DataSmoother object.
+
+        :param smoothing_factor: The factor by which the input data will be smoothed. (default: 0.2)
+        :param change_limit: The maximum allowed change in value between consecutive inputs. (default: 5)
+        """
         self.smoothing_factor = smoothing_factor
         self.change_limit = change_limit
         self.previous_value = None
 
-    def smooth(self, value):
+    def smooth(self, value: float) -> float:
+        """
+        Smooth the input value using exponential moving average and limit the change between consecutive values.
+
+        :param value: The input value to be smoothed.
+        :return: The smoothed value.
+        """
         if self.previous_value is None:
             self.previous_value = value
             return value
