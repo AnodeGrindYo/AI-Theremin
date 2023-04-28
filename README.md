@@ -1,6 +1,7 @@
 # AI-Theremin
 
-![](https://media.discordapp.net/attachments/922801785637322773/1100570818062331964/theremin2.gif)
+<!-- ![](https://media.discordapp.net/attachments/922801785637322773/1100570818062331964/theremin2.gif) -->
+![](https://media.discordapp.net/attachments/932672918859702355/1101339069801316453/theremin3.gif)
 
 AI Theremin is a funny application which uses hand tracking to simulate a musical instrument called the theremin.
 
