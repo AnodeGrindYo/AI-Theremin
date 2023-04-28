@@ -3,7 +3,9 @@ from tkinter import Scale, HORIZONTAL
 from functools import partial
 from PIL import Image, ImageTk
 import cv2
+from tuner import Tuner
 from typing import Callable
+from tuner_canvas import TunerCanvas
 
 
 class ThereminGUI:
@@ -21,6 +23,8 @@ class ThereminGUI:
         self.root.title("Theremin")
         self.smoothing_factor = 0.5
         self.change_limit = 50
+        self.tuner = Tuner()
+        
 
         # Create the canvas
         self.canvas = self.create_canvas()
@@ -42,6 +46,12 @@ class ThereminGUI:
 
         # Create change_limit slider
         self.change_limit_slider = self.create_change_limit_slider(right_frame)
+        
+        # # Create tuner_label
+        # self.tuner_label = self.create_tuner_label(right_frame)
+        
+        # Create tuner_canvas
+        self.tuner_canvas = self.create_tuner_canvas(right_frame)
     
     def update_canvas(self, frame: cv2.Mat) -> None: 
         """
@@ -108,6 +118,24 @@ class ThereminGUI:
         change_limit_slider.pack()
         return change_limit_slider
     
+    def create_tuner_label(self, parent: tk.Widget) -> tk.Label:
+        tuner_label = tk.Label(parent)
+        tuner_label.pack()
+        return tuner_label
+
+    def update_tuner_label(self, frequency: float) -> None:
+        note_name, cents_difference = self.tuner.frequency_to_note(frequency)
+        self.tuner_label.config(text=f"Note: {note_name} ({cents_difference:+} cents)")
+    
+    def create_tuner_canvas(self, parent: tk.Widget) -> TunerCanvas:
+        tuner_canvas = TunerCanvas(parent, width=300, height=300, bg="white")
+        tuner_canvas.pack()
+        return tuner_canvas
+
+    def update_tuner_canvas(self, frequency: float) -> None:
+        note_name, cents_difference = self.tuner.frequency_to_note(frequency)
+        self.tuner_canvas.draw_tuner(note_name, cents_difference)
+    
     def update(self) -> None:
         """
         Update the GUI.
@@ -115,6 +143,7 @@ class ThereminGUI:
         smoothing_factor = self.smoothing_factor_slider.get()
         change_limit = self.change_limit_slider.get()
         self.update_loop(self, smoothing_factor=smoothing_factor, change_limit=change_limit)
+        
 
     def start(self) -> None:
         """

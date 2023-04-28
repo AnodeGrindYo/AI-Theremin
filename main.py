@@ -272,6 +272,9 @@ def update_loop(
                 # update_canvas(frame)
                 theremin_gui.update_canvas(frame)
                 previous_time = update_framerate(previous_time)
+                
+                # theremin_gui.update_tuner_label(smooth_frequency)
+                theremin_gui.update_tuner_canvas(smooth_frequency)
 
         if quit_flag:
             break
