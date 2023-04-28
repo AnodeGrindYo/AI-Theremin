@@ -1,10 +1,11 @@
 import cv2
 import mediapipe as mp
 from mediapipe.python.solutions.hands import Hands
-from mediapipe.python.solutions.drawing_utils import DrawingSpec, DrawingUtils
-from mediapipe.python.solution_base import SolutionOutputs
+from mediapipe.python.solutions.drawing_utils import DrawingSpec
 
-def init_mediapipe() -> tuple[Hands, DrawingUtils, DrawingSpec]:
+# TODO check missing types
+
+def init_mediapipe():
     """
     Initialize Mediapipe Hand detector and drawing utilities.
 
@@ -17,7 +18,7 @@ def init_mediapipe() -> tuple[Hands, DrawingUtils, DrawingSpec]:
 
     return hand_detector, drawing_utils, connections_draw_spec
 
-def process_image(hand_detector: Hands, image: cv2.Mat) -> SolutionOutputs:
+def process_image(hand_detector: Hands, image: cv2.Mat):
     """
     Process the image using the Mediapipe Hand detector.
 
@@ -29,8 +30,8 @@ def process_image(hand_detector: Hands, image: cv2.Mat) -> SolutionOutputs:
 
 def draw_landmarks(
         image: cv2.Mat, 
-        hand_landmarks: SolutionOutputs, 
-        drawing_utils: DrawingUtils,
+        hand_landmarks, 
+        drawing_utils,
         connections_draw_spec: DrawingSpec, 
         display_camera_image: bool = False
     ) -> None:
